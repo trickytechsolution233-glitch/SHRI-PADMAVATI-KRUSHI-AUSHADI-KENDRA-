@@ -4,223 +4,294 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shri Padmavati Krushi Aushadi Kendra | Launching Soon</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Noto+Sans+Kannada:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins','Noto Sans Kannada',sans-serif;
+}
+
 body{
-  min-height:100vh;
-  overflow-x:hidden;
-  background:#001a00;
-  color:#fff;
+  color:white;
   text-align:center;
+  background:linear-gradient(rgba(0,60,0,0.7),rgba(0,60,0,0.7)),
+  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') no-repeat center center/cover;
+  overflow-x:hidden;
 }
 
-/* 🌄 SUNRISE */
-.sun{
-  position:fixed;
-  bottom:-150px;
-  left:50%;
-  transform:translateX(-50%);
-  width:200px;
-  height:200px;
-  background:radial-gradient(circle,#ffcc33,#ff9900);
-  border-radius:50%;
-  animation:sunrise 6s ease-out forwards;
-  z-index:1;
-}
-@keyframes sunrise{
-  to{bottom:60%;opacity:0;}
-}
-
-/* Background */
-.main-bg{
+/* 🌄 Sunrise Intro */
+#sunrise{
   position:fixed;
   width:100%;
-  height:100%;
-  background:linear-gradient(rgba(0,60,0,0.85),rgba(0,60,0,0.85)),
-  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') no-repeat center center/cover;
-  opacity:0;
-  animation:fadeIn 4s ease forwards 3s;
-  z-index:0;
-}
-@keyframes fadeIn{to{opacity:1;}}
-
-/* Particles */
-.particle{
-  position:fixed;
-  width:6px;height:6px;
-  background:#4CAF50;border-radius:50%;
-  opacity:0.6;
-  animation:float linear infinite;
-}
-@keyframes float{
-  from{transform:translateY(100vh);}
-  to{transform:translateY(-10vh);}
+  height:100vh;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:9999;
 }
 
-/* Leaves */
-.leaf{
-  position:fixed;
-  top:-50px;
-  font-size:20px;
-  animation:fall linear infinite;
-}
-@keyframes fall{
-  to{transform:translateY(110vh) rotate(360deg);}
+.sun{
+  width:200px;
+  height:200px;
+  background:radial-gradient(circle,#ffcc33,#ff6600);
+  border-radius:50%;
+  position:absolute;
+  bottom:-200px;
+  animation:sunrise 4s forwards;
 }
 
-/* Main Content */
-.container{
-  position:relative;
-  z-index:5;
-  max-width:900px;
-  margin:120px auto;
-  background:rgba(0,0,0,0.65);
-  padding:40px 20px;
+@keyframes sunrise{
+  to{bottom:40%;}
+}
+
+.logo-intro{
+  width:120px;
+  margin-bottom:20px;
   border-radius:20px;
-  backdrop-filter:blur(8px);
-  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+  animation:logoGlow 2s infinite alternate;
 }
 
-.logo{width:120px;border-radius:50%;margin-bottom:15px;}
-h1{color:#4CAF50;font-size:30px;}
-.kannada{margin-top:5px;color:#e0ffe0;font-size:18px;}
-.tagline{margin-top:15px;font-size:16px;}
-.launching{margin-top:20px;font-size:24px;font-weight:600;}
-.countdown{margin-top:15px;font-size:20px;}
+@keyframes logoGlow{
+  from{box-shadow:0 0 10px #7CFC00;}
+  to{box-shadow:0 0 30px #7CFC00;}
+}
+
+#sunrise h1{
+  margin-top:260px;
+  font-size:26px;
+  animation:fadeIn 3s ease forwards;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* 🌿 Main Section */
+.main{
+  padding:80px 20px;
+  display:none;
+}
+
+.container{
+  background:rgba(0,0,0,0.6);
+  padding:50px 30px;
+  border-radius:25px;
+  max-width:900px;
+  margin:auto;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* 🚀 Launching Soon */
+.launching-text{
+  font-size:38px;
+  font-weight:700;
+  margin-bottom:25px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,#7CFC00,#ffffff,#7CFC00);
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:shine 3s linear infinite, pulse 2s infinite;
+}
+
+.launching-text span{
+  display:block;
+  font-size:22px;
+  margin-top:8px;
+  color:#d4ffd4;
+  -webkit-text-fill-color:#d4ffd4;
+}
+
+@keyframes shine{
+  0%{background-position:-200%;}
+  100%{background-position:200%;}
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+}
+
+.logo-main{
+  width:130px;
+  margin-bottom:20px;
+  border-radius:25px;
+  box-shadow:0 0 20px #7CFC00;
+}
+
+h1{color:#7CFC00;}
+.kannada{margin-top:6px;color:#d4ffd4;}
+
+.tagline{
+  margin-top:20px;
+  line-height:1.6;
+}
+
+.buttons{
+  margin-top:25px;
+}
 
 .btn{
-  display:inline-block;margin:8px;
-  padding:10px 25px;border-radius:30px;
-  text-decoration:none;color:white;font-weight:600;
-}
-.call{background:#4CAF50;}
-.whatsapp{background:#25D366;}
-
-footer{margin-top:15px;font-size:14px;color:#ccc;}
-
-/* 📢 POPUP */
-.popup{
-  position:fixed;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  background:#ffffff;
-  color:#000;
-  padding:25px;
-  border-radius:15px;
-  text-align:center;
-  width:90%;max-width:400px;
-  display:none;
-  z-index:999;
-}
-.popup button{
-  margin-top:15px;
-  padding:8px 20px;
-  border:none;
-  background:#4CAF50;
+  display:inline-block;
+  margin:10px;
+  padding:12px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
   color:white;
-  border-radius:20px;
-  cursor:pointer;
+  background:#2ecc71;
+  transition:0.3s;
 }
 
-/* 🏆 Review Button */
+.btn:hover{
+  background:#27ae60;
+  transform:scale(1.05);
+}
+
+/* ⭐ Review Counter */
+.review-box{
+  margin-top:25px;
+  font-size:18px;
+  background:#145214;
+  padding:15px;
+  border-radius:15px;
+}
+
+/* 🏆 Floating Review Button */
 .review-btn{
   position:fixed;
-  right:20px;
-  bottom:20px;
-  background:#ffcc00;
-  color:#000;
-  padding:12px 18px;
+  bottom:25px;
+  right:25px;
+  background:#FFD700;
+  color:black;
+  padding:14px 18px;
   border-radius:50px;
-  font-weight:600;
+  font-weight:bold;
   text-decoration:none;
-  box-shadow:0 5px 15px rgba(0,0,0,0.4);
+  box-shadow:0 8px 20px rgba(0,0,0,0.5);
   z-index:999;
+}
+
+/* 📍 Map Section */
+.map{
+  margin-top:40px;
+}
+
+iframe{
+  width:100%;
+  height:300px;
+  border-radius:20px;
+  border:none;
+}
+
+/* 🎉 Confetti */
+.confetti{
+  position:fixed;
+  top:-10px;
+  width:10px;
+  height:15px;
+  opacity:0.9;
+  animation:fall 3s linear forwards;
+  z-index:9999;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(100vh) rotate(360deg);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="sun"></div>
-<div class="main-bg"></div>
+<!-- 🎵 Background Music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f3f3f43d.mp3?filename=soft-background-ambient-110624.mp3" type="audio/mpeg">
+</audio>
 
-<!-- Popup -->
-<div class="popup" id="offerPopup">
-  <h3>🎉 Grand Opening Offer</h3>
-  <p>Special discounts on Seeds & Fertilizers for Opening Week!</p>
-  <button onclick="document.getElementById('offerPopup').style.display='none'">Close</button>
+<!-- 🌄 Sunrise Intro -->
+<div id="sunrise">
+  <img src="https://lh3.googleusercontent.com/geougc-cs/ABOP9psKmL5DoA5InM9TCcpu9rG75m88OBFpIWWJlUdiYYKbOhCn_S-gIrFuEgBUfUOQUKRUG0EH2SsgDW4B7EBb4-qPQbVIrNDdE_gWh_4oqU6QImqO9N3Ch32fXVC_xqBbkpknueWiwAWq-c1F=w336-h336-p" class="logo-intro">
+  <div class="sun"></div>
+  <h1>🌅 Welcome to Shri Padmavati Krushi Aushadi Kendra</h1>
 </div>
 
-<!-- Main Content -->
+<!-- 🌿 Main Website -->
+<div class="main" id="mainContent">
 <div class="container">
-<img class="logo" src="https://lh3.googleusercontent.com/geougc-cs/ABOP9psKmL5DoA5InM9TCcpu9rG75m88OBFpIWWJlUdiYYKbOhCn_S-gIrFuEgBUfUOQUKRUG0EH2SsgDW4B7EBb4-qPQbVIrNDdE_gWh_4oqU6QImqO9N3Ch32fXVC_xqBbkpknueWiwAWq-c1F=w336-h336-p">
 
-<h1>Shri Padmavati Krushi Aushadi Kendra</h1>
-<div class="kannada">ಶ್ರೀ ಪದ್ಮಾವತಿ ಕೃಷಿ ಔಷಧಿ ಕೇಂದ್ರ</div>
+  <div class="launching-text">
+    🚀 LAUNCHING SOON 🚀
+    <span>ಶೀಘ್ರದಲ್ಲೇ ಪ್ರಾರಂಭ</span>
+  </div>
 
-<div class="tagline">
-Seeds • Fertilizers • Pesticides • Agricultural Solutions<br>
-ಬೀಜಗಳು • ರಸಗೊಬ್ಬರ • ಕೀಟನಾಶಕಗಳು • ಕೃಷಿ ಸಲಹೆಗಳು
+  <img src="https://lh3.googleusercontent.com/geougc-cs/ABOP9psKmL5DoA5InM9TCcpu9rG75m88OBFpIWWJlUdiYYKbOhCn_S-gIrFuEgBUfUOQUKRUG0EH2SsgDW4B7EBb4-qPQbVIrNDdE_gWh_4oqU6QImqO9N3Ch32fXVC_xqBbkpknueWiwAWq-c1F=w336-h336-p" class="logo-main">
+
+  <h1>🌿 Shri Padmavati Krushi Aushadi Kendra</h1>
+  <div class="kannada">ಶ್ರೀ ಪದ್ಮಾವತಿ ಕೃಷಿ ಔಷಧಿ ಕೇಂದ್ರ</div>
+
+  <div class="tagline">
+    Seeds • Fertilizers • Pesticides • Agricultural Guidance <br>
+    ಬೀಜಗಳು • ರಸಗೊಬ್ಬರ • ಕೀಟನಾಶಕಗಳು • ಕೃಷಿ ಸಲಹೆಗಳು
+  </div>
+
+  <div class="buttons">
+    <a href="tel:8550047165" class="btn">📞 Call Now</a>
+    <a href="https://wa.me/918550047165" target="_blank" class="btn">💬 WhatsApp</a>
+  </div>
+
+  <div class="review-box">
+    ⭐ Google Rating: <strong>4.8 / 5</strong><br>
+    🏆 Happy costumer Reviewed Us
+  </div>
+
+  <div class="map">
+    <h3>📍 Visit Our Shop</h3>
+    <iframe src="https://www.google.com/maps?q=Shri%20Padmavati%20Krushi%20Aushadi%20Kendra&output=embed"></iframe>
+  </div>
+
+</div>
 </div>
 
-<div class="launching">🌿 Website Launching Soon 🌾</div>
-<div class="countdown" id="countdown"></div>
-
-<a href="tel:8550047165" class="btn call">📞 Call</a>
-<a href="https://wa.me/918550047165" class="btn whatsapp">💬 WhatsApp</a>
-
-<footer>
-📅 Launch Date: 13 February 2026 <br>
-© 2026 Shri Padmavati Krushi Aushadi Kendra
-</footer>
-</div>
-
-<!-- Google Review -->
-<a href="https://search.google.com/local/writereview?placeid=ChIJY3_6mFlFvzsRkcx4hvOh4dM" 
-   target="_blank" class="review-btn">
-⭐ Write Google Review
+<a href="https://search.google.com/local/writereview?placeid=ChIJY3_6mFlFvzsRkcx4hvOh4dM"
+target="_blank" class="review-btn">
+⭐ Write Review
 </a>
 
 <script>
-// Particles
-for(let i=0;i<40;i++){
-  let p=document.createElement("div");
-  p.className="particle";
-  p.style.left=Math.random()*100+"vw";
-  p.style.animationDuration=(6+Math.random()*6)+"s";
-  document.body.appendChild(p);
+function startConfetti() {
+  const duration = 5000;
+  const end = Date.now() + duration;
+  (function frame() {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = Math.random() * 100 + "vw";
+    confetti.style.backgroundColor =
+      ["#FFD700", "#7CFC00", "#ffffff", "#2ecc71", "#ffcc00"][
+        Math.floor(Math.random() * 5)
+      ];
+    document.body.appendChild(confetti);
+    setTimeout(() => { confetti.remove(); }, 3000);
+    if (Date.now() < end) { requestAnimationFrame(frame); }
+  })();
 }
 
-// Leaves
-for(let i=0;i<15;i++){
-  let l=document.createElement("div");
-  l.className="leaf";
-  l.innerHTML="🌿";
-  l.style.left=Math.random()*100+"vw";
-  l.style.animationDuration=(8+Math.random()*8)+"s";
-  document.body.appendChild(l);
-}
-
-// Countdown
-var launchDate=new Date("February 13, 2026 00:00:00").getTime();
-setInterval(function(){
-  var now=new Date().getTime();
-  var distance=launchDate-now;
-  var days=Math.floor(distance/(1000*60*60*24));
-  var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-  var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-  var seconds=Math.floor((distance%(1000*60))/1000);
-  document.getElementById("countdown").innerHTML=
-  days+" Days | "+hours+" Hours | "+minutes+" Minutes | "+seconds+" Seconds";
-},1000);
-
-// Auto Popup
 setTimeout(function(){
-  document.getElementById("offerPopup").style.display="block";
-},5000);
+  document.getElementById("sunrise").style.display="none";
+  document.getElementById("mainContent").style.display="block";
+  startConfetti();
+},4000);
 </script>
 
 </body>
 </html>
+
+
